@@ -21,4 +21,4 @@ Thanks to this little tool you can find me at:
 
 - https://twitter.com/croloris
 - https://hachyderm.io/@kristoff
-- https://bsky.app/profile/kristoff.bsky.social
+- https://bsky.app/profile/kristoff.it
