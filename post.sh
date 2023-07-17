@@ -14,6 +14,8 @@ if [ ! -z "$text" ] && [ "$text" != " " ]; then
   t update "$text"
   bsky post "$text"
   toot post "$text"
+else
+  echo "Aborted."
 fi
 
 # Clean up
