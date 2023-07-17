@@ -11,7 +11,8 @@ The shell script in this repository is very simple, so you can easily comment ou
 ## Usage
 - Follow the login procedure on each of the clients.
 - Run `post.sh`, it will open your default editor (like `git commit` does). 
-- Write your message, save the file, close the editor. If your file is not saved or left empty, the operation will be aborted.
+- Write your message, save the file, close the editor.
+   - If your file is not saved or left empty, the operation will be aborted.
 - Your message will be sent on all platforms, assuming everything goes well with the relative client.
 
 # Social Media
