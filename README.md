@@ -7,3 +7,11 @@ This tool allows broadcasting a message on Twitter, Bluesky and Mastodon with a 
 Depends on `t`, `toot`, and `bksy`. it's on you to procure those clients and perform the initial authentication process.
 
 The shell script in this repository is very simple, so you can easily comment out or add new clients based on your needs.
+
+# Social Media
+
+Thanks to this little tool you can find me at:
+
+- https://twitter.com/croloris
+- https://hachyderm.io/@kristoff
+- https://bsky.app/profile/kristoff.bsky.social
