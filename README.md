@@ -1,6 +1,6 @@
 # simplex
 
-Let's simplify our relationship with social media by cutting the interactions in "half".
+Let's simplify our relationship with social media by going from duplex to simplex.
 
 This tool allows broadcasting a message on Twitter, Bluesky and Mastodon with a single command.
 
