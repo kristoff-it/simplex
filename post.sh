@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 set -eu
 
@@ -10,7 +10,7 @@ ${EDITOR:-vi} "$temp_file"
 
 text=$(<"$temp_file")
 
-if [ ! -z "$text" -a "$text"!=" " ]; then
+if [ ! -z "$text" ] && [ "$text"!=" " ]; then
   t update "$text"
   bsky post "$text"
   toot post "$text"
