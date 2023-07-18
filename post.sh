@@ -11,9 +11,9 @@ ${EDITOR:-vi} "$temp_file"
 text=$(<"$temp_file")
 
 if [ ! -z "$text" ] && [ "$text" != " " ]; then
-  t update "$text"
-  bsky post "$text"
-  toot post "$text"
+  t update "$text"  || echo "failed to post: t"
+  toot post "$text" || echo "failed to post: toot"
+  bsky post "$text" || echo "failed to post: bsky"
 else
   echo "Aborted."
 fi
