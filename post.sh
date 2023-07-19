@@ -30,14 +30,20 @@ done
 
 t update "$text"  "${twitter_imgs[@]}" || echo "failed to post: t"
 
-# Mastodon and Bluesky
-other_imgs=()
+# Mastodon
+mastodon_imgs=()
 for file in "$@"; do
-  other_imgs+=("--image" "$file")
+  mastodon_imgs+=("-m" "$file")
 done
 
-toot post "$text" "${other_imgs[@]}" || echo "failed to post: toot"
-bsky post "$text" "${other_imgs[@]}" || echo "failed to post: bsky"
+toot post "$text" "${mastodon_imgs[@]}" || echo "failed to post: toot"
+
+# Bluesky
+bluesky_imgs=()
+for file in "$@"; do
+  bluesky_imgs+=("--image" "$file")
+done
+bsky post "${bluesky_imgs[@]}" "$text" || echo "failed to post: bsky"
 
 # Clean up
 rm "$temp_file"
