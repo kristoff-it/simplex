@@ -15,6 +15,9 @@ The shell script in this repository is very simple, so you can easily comment ou
    - If your file is not saved or left empty, the operation will be aborted.
 - Your message will be sent on all platforms, assuming everything goes well with the relative client.
 
+### Sending images
+To add images to a post: `./post.sh img1.png imgN.png`. 
+The social media sites currently supported allow up to 4 images.
 # Social Media
 
 Thanks to this little tool you can find me at:
