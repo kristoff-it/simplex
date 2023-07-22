@@ -23,27 +23,40 @@ if [ -z "$text" ] || [ "$text" == " " ]; then
 fi
 
 # Twitter
-twitter_imgs=()
-for file in "$@"; do
-  twitter_imgs+=("--file" "$file")
-done
-
-t update "$text"  "${twitter_imgs[@]}" || echo "failed to post: t"
+if [ "$#" -gt 0 ]; then
+  twitter_imgs=()
+  for file in "$@"; do
+    twitter_imgs+=("--file" "$file")
+  done
+  
+  t update "$text"  "${twitter_imgs[@]}" || echo "failed to post: t"
+else
+  t update "$text" || echo "failed to post: t"
+fi
 
 # Mastodon
-mastodon_imgs=()
-for file in "$@"; do
-  mastodon_imgs+=("-m" "$file")
-done
+if [ "$#" -gt 0 ]; then
+  mastodon_imgs=()
+  for file in "$@"; do
+    mastodon_imgs+=("-m" "$file")
+  done
 
-toot post "$text" "${mastodon_imgs[@]}" || echo "failed to post: toot"
+  toot post "$text" "${mastodon_imgs[@]}" || echo "failed to post: toot"
+else
+  toot post "$text" || echo "failed to post: toot"
+fi
 
 # Bluesky
-bluesky_imgs=()
-for file in "$@"; do
-  bluesky_imgs+=("--image" "$file")
-done
-bsky post "${bluesky_imgs[@]}" "$text" || echo "failed to post: bsky"
+if [ "$#" -gt 0 ]; then
+  bluesky_imgs=()
+  for file in "$@"; do
+    bluesky_imgs+=("--image" "$file")
+  done
+
+  bsky post "${bluesky_imgs[@]}" "$text" || echo "failed to post: bsky"
+else
+  bsky post "$text" || echo "failed to post: bsky"
+fi
 
 # Clean up
 rm "$temp_file"
