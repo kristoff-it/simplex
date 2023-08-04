@@ -58,5 +58,12 @@ else
   bsky post "$text" || echo "failed to post: bsky"
 fi
 
+
+if [ "$#" -gt 0 ]; then
+  echo "Skipping LinkedIn as it doesn't support images."
+else
+  python3 -m linkedin post -v public "$text" || echo "failed to post: linkedin"
+fi
+
 # Clean up
 rm "$temp_file"
